@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="7px" viewBox="0 0 13 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1237.44151,58.8788462 C1237.27456,59.0403846 1236.99631,59.0403846 1236.82936,58.8788462 L1231.12521,53.3057692 C1230.95826,53.1442308 1230.95826,52.875 1231.12521,52.7134615 L1231.73737,52.1211538 C1231.90432,51.9596154 1232.18257,51.9596154 1232.34952,52.1211538 L1236.82936,56.5096154 C1236.99631,56.6711538 1237.27456,56.6711538 1237.44151,56.5096154 L1241.92135,52.1480769 C1242.0883,51.9865385 1242.36655,51.9865385 1242.5335,52.1480769 L1243.14566,52.7403846 C1243.28478,52.9019231 1243.28478,53.1442308 1243.14566,53.3057692 L1237.44151,58.8788462 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard_Revised" transform="translate(-1231.000000, -52.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#5A5A5A" opacity="0.5" transform="translate(1237.125000, 55.500000) scale(-1, 1) translate(-1237.125000, -55.500000) " xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

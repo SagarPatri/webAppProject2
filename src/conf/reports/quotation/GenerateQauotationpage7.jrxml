@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="LetterSection"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="SigPath" isForPrompting="false" class="java.lang.String">
+		<parameterDescription><![CDATA[SigPath]]></parameterDescription>
+	</parameter>
+
+	<field name="GENERATED_DATE" class="java.lang.String"/>
+	<field name="REQ_BY" class="java.lang.String"/>
+	<field name="REF_NO" class="java.lang.String"/>
+	<field name="QUOT_NO" class="java.lang.String"/>
+	<field name="GRP_PROF_SEQ_ID" class="java.lang.String"/>
+	<field name="PRODUCT_NAME" class="java.lang.String"/>
+	<field name="AREA_NAME" class="java.lang.String"/>
+	<field name="RULE_AREA_NAME" class="java.lang.String"/>
+	<field name="MAX_LIMIT" class="java.lang.String"/>
+	<field name="POL_SI" class="java.lang.String"/>
+	<field name="OUTSD_AREA_LIMIT" class="java.lang.String"/>
+	<field name="DAILY_ACCMON_COV_YN" class="java.lang.String"/>
+	<field name="DAILY_ACCMON_LIMIT" class="java.lang.String"/>
+	<field name="IP_SURGERY_COV_YN" class="java.lang.String"/>
+	<field name="IP_SURGERY_LIMIT" class="java.lang.String"/>
+	<field name="IP_ANAESTHESIOLOGY_COV_YN" class="java.lang.String"/>
+	<field name="IP_ANAESTHESIOLOGY_LIMIT" class="java.lang.String"/>
+	<field name="IP_SURGEON_COV_YN" class="java.lang.String"/>
+	<field name="IP_SURGEON_LIMIT" class="java.lang.String"/>
+	<field name="IP_PRNT_ACCMON_COV_YN" class="java.lang.String"/>
+	<field name="IP_PRNT_ACCMON_LIMIT" class="java.lang.String"/>
+	<field name="IP_CASH_BENEFIT_COV_YN" class="java.lang.String"/>
+	<field name="IP_CASH_BENEFIT_LIMIT" class="java.lang.String"/>
+	<field name="IP_RADIO_THRPY_COV_YN" class="java.lang.String"/>
+	<field name="OP_CONS_DEDUCT_AMNT" class="java.lang.String"/>
+	<field name="OP_LAB_COV_YN" class="java.lang.String"/>
+	<field name="OP_LAB_LIMIT" class="java.lang.String"/>
+	<field name="OP_PATH_COV_YN" class="java.lang.String"/>
+	<field name="OP_PATH_LIMIT" class="java.lang.String"/>
+	<field name="OP_PRES_MED_COV_YN" class="java.lang.String"/>
+	<field name="OP_PRES_MED_LIMIT" class="java.lang.String"/>
+	<field name="OP_CON_COV_YN" class="java.lang.String"/>
+	<field name="OP_CON_LIMIT" class="java.lang.String"/>
+	<field name="PRE_EXIST_DIS_COV_YN" class="java.lang.String"/>
+	<field name="PRE_EXIST_DIS_LIMIT" class="java.lang.String"/>
+	<field name="CHRONIC_COV_YN" class="java.lang.String"/>
+	<field name="CHRONIC_LIMIT" class="java.lang.String"/>
+	<field name="PASSIVE_WAR_COV_YN" class="java.lang.String"/>
+	<field name="TRANSPLANT_COV_YN" class="java.lang.String"/>
+	<field name="VITAMINS_COV_YN" class="java.lang.String"/>
+	<field name="IP_REHABILTON_COV_YN" class="java.lang.String"/>
+	<field name="IP_REHABILTON_LIMIT" class="java.lang.String"/>
+	<field name="INT_EMR_COV_YN" class="java.lang.String"/>
+	<field name="INT_EMR_LIMIT" class="java.lang.String"/>
+	<field name="PSYCHTRIC_COV_YN" class="java.lang.String"/>
+	<field name="PSYCHTRIC_LIMIT" class="java.lang.String"/>
+	<field name="VACC_COV_YN" class="java.lang.String"/>
+	<field name="VACC_LIMIT" class="java.lang.String"/>
+	<field name="ALTR_MED_COV_YN" class="java.lang.String"/>
+	<field name="ALTR_MED_LIMIT" class="java.lang.String"/>
+	<field name="PSYTHORAPY_COV_YN" class="java.lang.String"/>
+	<field name="PSYTHORAPY_LIMIT" class="java.lang.String"/>
+	<field name="HEALTH_CHKUP_COV_YN" class="java.lang.String"/>
+	<field name="HEALTH_CHKUP_LIMIT" class="java.lang.String"/>
+	<field name="MAT_COV_YN" class="java.lang.String"/>
+	<field name="MAT_LIMIT" class="java.lang.String"/>
+	<field name="FIN_IP" class="java.lang.String"/>
+	<field name="FIN_OPT" class="java.lang.String"/>
+	<field name="FIN_DNT" class="java.lang.String"/>
+	<field name="FIN_MAT" class="java.lang.String"/>
+	<field name="IP_GRP_PREMUM" class="java.lang.String"/>
+	<field name="OPT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="DNT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="MAT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="TOTAL_GRP_PREMUM" class="java.lang.String"/>
+	<field name="POL_DURATION_MONTH" class="java.lang.String"/>
+	<field name="COVRG_START_DATE" class="java.lang.String"/>
+	<field name="COVRG_END_DATE" class="java.lang.String"/>
+	<field name="IP_COMP_ACMND_COV_YN" class="java.lang.String"/>
+	<field name="AMBULNC_COV_YN" class="java.lang.String"/>
+	<field name="HORMN_REPLC_COV_YN" class="java.lang.String"/>
+	<field name="DNTL_COV_YN" class="java.lang.String"/>
+	<field name="OPTL_COV_YN" class="java.lang.String"/>
+	<field name="CONGENITAL_COV_YN" class="java.lang.String"/>
+	<field name="IP_CONSLT_COV_YN" class="java.lang.String"/>
+	<field name="IP_DIAG_THRPY_COV_YN" class="java.lang.String"/>
+	<field name="TOT_COV_LIVES" class="java.lang.String"/>
+	<field name="TOT_COV_LIVES_MATRNTY" class="java.lang.String"/>
+	<field name="BASIC_PREMIUM" class="java.lang.String"/>
+	<field name="BASIC_GRP_PREMIUM" class="java.lang.String"/>
+	<field name="HOSPICE_COV_YN" class="java.lang.String"/>
+	<field name="INS_COMP_NAME" class="java.lang.String"/>
+	<field name="OPT_COPAY_PERC" class="java.lang.String"/>
+	<field name="OPT_DEDUCTBLE" class="java.lang.String"/>
+	<field name="OPTCL_COPAY_PERC" class="java.lang.String"/>
+	<field name="DNT_COPAY_PERC" class="java.lang.String"/>
+	<field name="ORTHO_COPAY_PERC" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="736"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="16"
+						y="-3050"
+						width="200"
+						height="60"
+						forecolor="#FFFFFF"
+						backcolor="#3399FF"
+						key="staticText-47"
+						positionType="Float"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Direct Billing Network for In Patient Treatment (in selected network worldwide)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="16"
+						y="-3170"
+						width="200"
+						height="60"
+						forecolor="#FFFFFF"
+						backcolor="#3399FF"
+						key="staticText-48"
+						positionType="Float"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Cash benefit per night of stay for in-patient treatment received completely free of  charge]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="16"
+						y="-3110"
+						width="200"
+						height="60"
+						forecolor="#FFFFFF"
+						backcolor="#3399FF"
+						key="staticText-49"
+						positionType="Float"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Radiotherapy, chemotherapy and computerized tomography including magnetic resonance imaging (brain and body scanning)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="216"
+						y="-3170"
+						width="262"
+						height="60"
+						forecolor="#000000"
+						backcolor="#CCE0FA"
+						key="staticText-52"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="216"
+						y="-3110"
+						width="262"
+						height="60"
+						forecolor="#000000"
+						backcolor="#CCE0FA"
+						key="staticText-53"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="216"
+						y="-3050"
+						width="262"
+						height="60"
+						forecolor="#000000"
+						backcolor="#CCE0FA"
+						key="staticText-69"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="311"
+						width="469"
+						height="22"
+						key="staticText-75"
+						positionType="Float"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-BoldOblique" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[TOTAL ANNUAL PREMIUM FOR THE POLICY (IN QAR)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="348"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-76"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Basic Annual Premium ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="348"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-1"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BASIC_GRP_PREMIUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="392"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-77"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Optical Annual Premium]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="392"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-2"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{OPT_GRP_PREMUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="370"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-78"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Dental Annual Premium]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="370"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-3"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DNT_GRP_PREMUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="414"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-79"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Maternity Annual Premium ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="443"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-80"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total Premium]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="443"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-4"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TOTAL_GRP_PREMUM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="414"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-5"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MAT_GRP_PREMUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="21"
+						width="461"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-81"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DETAILED CENSUS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="43"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-82"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Category]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="43"
+						width="201"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="textField-6"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PRODUCT_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="65"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-83"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="87"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-84"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Adult Married Female]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="87"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-7"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TOT_COV_LIVES_MATRNTY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="65"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-8"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TOT_COV_LIVES}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="14"
+						y="129"
+						width="469"
+						height="22"
+						key="staticText-85"
+						positionType="Float"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-BoldOblique" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[MEMBER ANNUAL PREMIUM (IN QAR)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="156"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-86"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Premium table]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="156"
+						width="202"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="textField-9"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PRODUCT_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="178"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-87"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Basic Premium Per Member ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="200"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-88"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Dental Premium Per Member ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="200"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-10"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIN_DNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="178"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-11"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BASIC_PREMIUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="222"
+						width="260"
+						height="22"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-89"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Optical Premium Per Member ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="14"
+						y="244"
+						width="260"
+						height="44"
+						forecolor="#FFFFFF"
+						backcolor="#0070C0"
+						key="staticText-90"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Maternity Premium  (Per adult married female)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="244"
+						width="200"
+						height="44"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-12"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIN_MAT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="274"
+						y="222"
+						width="200"
+						height="22"
+						forecolor="#000066"
+						backcolor="#B8CCE4"
+						key="textField-13"
+						positionType="Float"/>
+					<box leftPadding="1" rightPadding="1">					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#FFFFFF"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIN_OPT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="47"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="9"
+						y="3"
+						width="104"
+						height="41"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/Al_Koot_New_Logo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="348"
+						y="29"
+						width="180"
+						height="17"
+						key="staticText-73"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Oblique" size="8" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[Valid for 30 days from the date of issue]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="479"
+						y="11"
+						width="49"
+						height="18"
+						key="staticText-74"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<text><![CDATA[page 7]]></text>
+				</staticText>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

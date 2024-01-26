@@ -1,0 +1,126 @@
+#divParent{
+    position:relative;
+}
+.searchResults {
+	padding: 0px;
+	border: 1px solid #84a10b;
+	background-color: #c0e710;	
+	position: absolute; 
+	width: 618px;	
+	display: block;
+	overflow: scroll;
+	height:300px;
+	margin-top: -2px;
+	
+}
+
+.searchBox{
+	width: 300px;
+	height: 22px;
+	background:white url(../images/search.png) no-repeat 3px 2px;
+	padding-left:17px;
+}
+.searchBoxMoreMedium{
+	width: 190px;
+	height: 22px;
+	background:white url(../images/search.png) no-repeat 3px 2px;
+	padding-left:17px;
+}
+.searchBoxTooLarg{
+	width: 650px;
+	height: 22px;
+	background:white url(../images/search.png) no-repeat 3px 2px;
+	padding-left:17px;
+}
+
+.sdMainDiv{
+position: absolute;
+}
+.sdPageLink{
+padding: 1px;
+border: 1px solid gray;
+background-color: #c0e710;
+color: gray;
+display: inline;
+font-size: 11px;
+}
+.sdCurrentPageLink{
+padding: 1px;
+border: 1px solid gray;
+background-color: #bdb76b;
+color: blue;
+display: inline;
+font-size: 11px;
+max-width:5px; 
+}
+.sdPageBackward{
+padding: 1px;
+border: 1px solid gray;
+background-color: #c0e710;
+color: gray;
+display: inline;
+font-size: 11px;
+font-weight: bold;
+}
+.sdPageBackward:HOVER{
+color: blue;
+cursor: pointer;
+}
+
+.sdPageForward{
+padding: 1px 2px 1px 2px;
+border: 1px solid gray;
+background-color: #c0e710;
+color: gray;
+display: inline;
+font-size: 11px;
+font-weight: bold;
+}
+
+.sdPageForward:HOVER{
+color: blue;
+cursor: pointer;
+}
+
+.sdPageLink:HOVER {
+	color: blue;
+	cursor: pointer;
+}
+.sdPageLinks{
+padding: 0;
+border: 0;
+width: 200px;
+}
+
+.sdTextDiv{
+padding: 1px;
+border: 2px solid gray;
+font-size: 10px;
+font-stretch: 
+z-index: 9999999999999999;
+}
+.sdTextDiv:HOVER {
+	color: blue;
+	font-weight: bold;
+	cursor: pointer;
+}
+.sdTextDiv:FOCUS{
+	color: blue;
+	font-weight: bold;
+	cursor: pointer;
+}
+.sdmTextDiv{
+/* background-color: rgb(91, 204, 128); */
+ background-color: #f8f8f8;
+ overflow-x: hidden; 
+ overflow-y: scroll;
+height: 90px;
+z-index: 9999999999999999;
+}
+.searchBoxSpecial{
+	width: 600px;
+	height: 30px;
+	background:white url(../images/lens.svg) no-repeat 4px 3px;
+	padding-left:18px;
+	
+}

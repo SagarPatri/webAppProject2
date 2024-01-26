@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="LetterSection"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="SigPath" isForPrompting="false" class="java.lang.String">
+		<parameterDescription><![CDATA[SigPath]]></parameterDescription>
+	</parameter>
+
+	<field name="GENERATED_DATE" class="java.lang.String"/>
+	<field name="REQ_BY" class="java.lang.String"/>
+	<field name="REF_NO" class="java.lang.String"/>
+	<field name="QUOT_NO" class="java.lang.String"/>
+	<field name="GRP_PROF_SEQ_ID" class="java.lang.String"/>
+	<field name="PRODUCT_NAME" class="java.lang.String"/>
+	<field name="AREA_NAME" class="java.lang.String"/>
+	<field name="RULE_AREA_NAME" class="java.lang.String"/>
+	<field name="MAX_LIMIT" class="java.lang.String"/>
+	<field name="POL_SI" class="java.lang.String"/>
+	<field name="OUTSD_AREA_LIMIT" class="java.lang.String"/>
+	<field name="DAILY_ACCMON_COV_YN" class="java.lang.String"/>
+	<field name="DAILY_ACCMON_LIMIT" class="java.lang.String"/>
+	<field name="IP_SURGERY_COV_YN" class="java.lang.String"/>
+	<field name="IP_SURGERY_LIMIT" class="java.lang.String"/>
+	<field name="IP_ANAESTHESIOLOGY_COV_YN" class="java.lang.String"/>
+	<field name="IP_ANAESTHESIOLOGY_LIMIT" class="java.lang.String"/>
+	<field name="IP_SURGEON_COV_YN" class="java.lang.String"/>
+	<field name="IP_SURGEON_LIMIT" class="java.lang.String"/>
+	<field name="IP_PRNT_ACCMON_COV_YN" class="java.lang.String"/>
+	<field name="IP_PRNT_ACCMON_LIMIT" class="java.lang.String"/>
+	<field name="IP_CASH_BENEFIT_COV_YN" class="java.lang.String"/>
+	<field name="IP_CASH_BENEFIT_LIMIT" class="java.lang.String"/>
+	<field name="IP_RADIO_THRPY_COV_YN" class="java.lang.String"/>
+	<field name="OP_CONS_DEDUCT_AMNT" class="java.lang.String"/>
+	<field name="OP_LAB_COV_YN" class="java.lang.String"/>
+	<field name="OP_LAB_LIMIT" class="java.lang.String"/>
+	<field name="OP_PATH_COV_YN" class="java.lang.String"/>
+	<field name="OP_PATH_LIMIT" class="java.lang.String"/>
+	<field name="OP_PRES_MED_COV_YN" class="java.lang.String"/>
+	<field name="OP_PRES_MED_LIMIT" class="java.lang.String"/>
+	<field name="OP_CON_COV_YN" class="java.lang.String"/>
+	<field name="OP_CON_LIMIT" class="java.lang.String"/>
+	<field name="PRE_EXIST_DIS_COV_YN" class="java.lang.String"/>
+	<field name="PRE_EXIST_DIS_LIMIT" class="java.lang.String"/>
+	<field name="CHRONIC_COV_YN" class="java.lang.String"/>
+	<field name="CHRONIC_LIMIT" class="java.lang.String"/>
+	<field name="PASSIVE_WAR_COV_YN" class="java.lang.String"/>
+	<field name="TRANSPLANT_COV_YN" class="java.lang.String"/>
+	<field name="VITAMINS_COV_YN" class="java.lang.String"/>
+	<field name="IP_REHABILTON_COV_YN" class="java.lang.String"/>
+	<field name="IP_REHABILTON_LIMIT" class="java.lang.String"/>
+	<field name="INT_EMR_COV_YN" class="java.lang.String"/>
+	<field name="INT_EMR_LIMIT" class="java.lang.String"/>
+	<field name="PSYCHTRIC_COV_YN" class="java.lang.String"/>
+	<field name="PSYCHTRIC_LIMIT" class="java.lang.String"/>
+	<field name="VACC_COV_YN" class="java.lang.String"/>
+	<field name="VACC_LIMIT" class="java.lang.String"/>
+	<field name="ALTR_MED_COV_YN" class="java.lang.String"/>
+	<field name="ALTR_MED_LIMIT" class="java.lang.String"/>
+	<field name="PSYTHORAPY_COV_YN" class="java.lang.String"/>
+	<field name="PSYTHORAPY_LIMIT" class="java.lang.String"/>
+	<field name="HEALTH_CHKUP_COV_YN" class="java.lang.String"/>
+	<field name="HEALTH_CHKUP_LIMIT" class="java.lang.String"/>
+	<field name="MAT_COV_YN" class="java.lang.String"/>
+	<field name="MAT_LIMIT" class="java.lang.String"/>
+	<field name="FIN_IP" class="java.lang.String"/>
+	<field name="FIN_OPT" class="java.lang.String"/>
+	<field name="FIN_DNT" class="java.lang.String"/>
+	<field name="FIN_MAT" class="java.lang.String"/>
+	<field name="IP_GRP_PREMUM" class="java.lang.String"/>
+	<field name="OPT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="DNT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="MAT_GRP_PREMUM" class="java.lang.String"/>
+	<field name="TOTAL_GRP_PREMUM" class="java.lang.String"/>
+	<field name="POL_DURATION_MONTH" class="java.lang.String"/>
+	<field name="COVRG_START_DATE" class="java.lang.String"/>
+	<field name="COVRG_END_DATE" class="java.lang.String"/>
+	<field name="IP_COMP_ACMND_COV_YN" class="java.lang.String"/>
+	<field name="AMBULNC_COV_YN" class="java.lang.String"/>
+	<field name="HORMN_REPLC_COV_YN" class="java.lang.String"/>
+	<field name="DNTL_COV_YN" class="java.lang.String"/>
+	<field name="OPTL_COV_YN" class="java.lang.String"/>
+	<field name="CONGENITAL_COV_YN" class="java.lang.String"/>
+	<field name="IP_CONSLT_COV_YN" class="java.lang.String"/>
+	<field name="IP_DIAG_THRPY_COV_YN" class="java.lang.String"/>
+	<field name="TOT_COV_LIVES" class="java.lang.String"/>
+	<field name="TOT_COV_LIVES_MATRNTY" class="java.lang.String"/>
+	<field name="BASIC_PREMIUM" class="java.lang.String"/>
+	<field name="BASIC_GRP_PREMIUM" class="java.lang.String"/>
+	<field name="HOSPICE_COV_YN" class="java.lang.String"/>
+	<field name="INS_COMP_NAME" class="java.lang.String"/>
+	<field name="OPT_COPAY_PERC" class="java.lang.String"/>
+	<field name="OPT_DEDUCTBLE" class="java.lang.String"/>
+	<field name="OPTCL_COPAY_PERC" class="java.lang.String"/>
+	<field name="DNT_COPAY_PERC" class="java.lang.String"/>
+	<field name="ORTHO_COPAY_PERC" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="775"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="2"
+						y="162"
+						width="517"
+						height="479"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/qatarcityimage.jpg"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="40"
+						y="98"
+						width="440"
+						height="23"
+						key="textField-6"
+						isRemoveLineWhenBlank="true"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="15" isBold="true" isUnderline="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["MEDICAL INSURANCE PROPOSAL"]]></textFieldExpression>
+				</textField>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="345"
+						y="12"
+						width="134"
+						height="51"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/Al_Koot_New_Logo.png"]]></imageExpression>
+				</image>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

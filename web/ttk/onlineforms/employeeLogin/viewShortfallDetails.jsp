@@ -1,0 +1,298 @@
+<%@page import="com.ttk.common.TTKCommon"%>
+<%
+/**
+ * @ (#) viewShortfallDetails.jsp Nov 19 2015 
+ * Project      : TTK HealthCare Services Dubai
+ * File         : viewAuthDetails.jsp
+ * Author       : Kishor kumar S H
+ * Company      : RCS Technologies
+ * Date Created : 18 April 2017
+ *
+ */
+%>
+<%@ taglib uri="/WEB-INF/tlds/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/tlds/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/tlds/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/tlds/ttk-tags.tld" prefix="ttk" %>
+<%@ page import="com.ttk.dto.usermanagement.UserSecurityProfile"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.ttk.common.security.Cache" %>
+
+<head>
+<SCRIPT LANGUAGE="JavaScript" SRC="/ttk/scripts/validation.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="/ttk/scripts/onlineforms/EmployeeLogin/employeeClaim.js"></SCRIPT>
+</head>
+<style type="text/css">
+
+
+/*media screen*/
+fieldset {
+    width: 94%;
+    border: 1px solid #CCCCCC;
+    padding-bottom: -13px;
+    margin-left: 39px;
+}
+
+.button_design_class:nth-child(2),.button_design_class:nth-child(3) {
+  width: 10%;
+}
+
+/*media screen*/
+.errorContainer,successContainer {
+    width: 94%;
+}
+
+</style>
+<%
+pageContext.setAttribute("ShortFallStatusID",Cache.getCacheObject("shortfallStatus"));
+String activeSubLink=TTKCommon.getActiveSubLink(request);
+request.setAttribute("activeSubLink", activeSubLink);
+%>
+<div class="contentArea" id="contentArea">
+<div>
+		<table align="center" class="pageTitle" border="0" cellspacing="0"
+			cellpadding="0">
+			<tr>
+				<td width="57%">
+				<c:if test="${requestScope.type eq 'PAT'}">
+				Pre-Approval Shortfall List - 
+				</c:if>
+				<c:if test="${requestScope.type eq 'CLM'}">
+					Claim Shortfall List - 
+				</c:if>
+				<bean:write name="employeeHomeForm" property="caption" /> 
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br/><br/>
+<html:form action="/ViewAuthorizationShortfallDetails.do" method="post" enctype="multipart/form-data">
+
+<!-- S T A R T : Content/Form Area -->
+	<!-- S T A R T : Form Fields -->
+		<!-- S T A R T : Success Box -->
+		<logic:notEmpty name="updated" scope="request">
+			<table align="center" class="successContainer" style="display:" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><img src="/ttk/images/SuccessIcon.gif" title="Success" alt="Success" width="16" height="16" align="absmiddle">&nbsp;
+						<bean:message name="updated" scope="request"/>
+						
+					</td>
+				</tr>
+			</table>
+		</logic:notEmpty>
+		<!-- E N D : Success Box -->
+		
+<h4 class="sub_heading">Shortfall Details</h4>
+<div id="contentOuterSeparator"></div>
+<html:errors/>
+<br/>
+<table align="center" class="formContainer" cellspacing="0" cellpadding="0" style="width: 94%; border: 0;"> 
+<tr>
+	<td style="width: 19%" align="left" class="formLabel"><b>Shortfall No.</b></td> 
+	<td style="width: 1%" align="left">:</td>
+	<td style="width: 80%" align="left">${shortFallData[0]}</td>
+</tr>
+<tr>
+	<c:if test="${requestScope.activeSubLink eq 'Pre-Approval'}">
+	<td style="width: 19%" align="left" class="formLabel"><b>Pre-Approval No.</b></td>
+	</c:if>
+	<c:if test="${requestScope.activeSubLink eq 'Claims History'}">
+	<td style="width: 19%" align="left" class="formLabel"><b>Claim No.</b></td>
+	</c:if> 
+	<td style="width: 1%" align="left">:</td>
+	<td style="width: 80%" align="left">${shortFallData[15]}</td>
+</tr>
+<tr>
+	<c:if test="${requestScope.activeSubLink eq 'Pre-Approval'}">
+	<td style="width: 19%" align="left" class="formLabel"><b>Pre-Approval Status</b></td> 
+	</c:if>
+	<c:if test="${requestScope.activeSubLink eq 'Claims History'}">
+	<td style="width: 19%" align="left" class="formLabel"><b>Claim Status</b></td> 
+	</c:if>
+	<td style="width: 1%" align="left">:</td>
+	<td style="width: 80%" align="left">${shortFallData[1]}</td>
+</tr>
+</table> 
+<br>
+   	<fieldset> <legend>ADDITIONAL INFORMATION / CLARIFICATION REQUIRED FOR FURTHER PROCESSING</legend>
+	<ttk:ProviderShortFallQueries flow="PAT"/>
+	</fieldset>
+	<br>
+	<c:if test="${sessionScope.shortfallStatus eq 'Open'}">
+	<fieldset> <legend>Upload Document</legend>
+   	<table align="center" class="formContainer" border="0" cellspacing="0" cellpadding="0" style="width: 80%">
+		<tr>
+	    	<td height="20" class="formLabel">Select File to Upload</td>
+	    	<td class="textLabelBold"> : <html:file property="file" styleId="file"/> </td>
+	  	</tr>
+	  	<tr>
+	    	<td height="20" class="formLabel"></td>
+	    	<td class="textLabelBold"> : <html:file property="file01" styleId="file01"/> </td>
+	  	</tr>
+	  	<tr>
+	    	<td height="20" class="formLabel"></td>
+	    	<td class="textLabelBold"> : <html:file property="file02" styleId="file02"/> </td>
+	  	</tr>
+	  	<tr>
+	      <td colspan="2" align="center"> 
+	      	<!-- <font color="#04B4AE"> <strong>Please Select only .pdf file to upload.</strong></font> -->
+	      	<span class="mandatorySymbol"><b><font size=2 color= "red">Supported File Type: .pdf, .png, .jpeg,.jpg<br/>Note: Maximum file size allowed 3MB per file</font></b></span>
+	      </td>
+      </tr>
+	  	
+   	</table>
+   	</fieldset>
+	</c:if>
+   	<br>
+<br>
+
+	<fieldset><legend>
+	<c:if test="${requestScope.activeSubLink eq 'Pre-Approval'}">
+	PRE-APPROVAL REQUEST DETAILS
+	</c:if>
+	<c:if test="${requestScope.activeSubLink eq 'Claims History'}">
+	CLAIM REQUEST DETAILS
+	</c:if>
+	</legend>
+		<table style="background: #e3e3e3; border-radius:10px; width:99%; height:auto;" align="center">
+		
+		<tr>
+			<td style="width: 19%" align="left" class="formLabel"><b>Provider Name</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[3]}</td>
+			
+			<%-- <td style="width: 19%" align="left" class="formLabel"><b>Provider License No</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[5]}</td> --%>
+			<td style="width: 19%" align="left" class="formLabel"><b>Contact No</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[4]}</td>
+		</tr>
+		<!-- <tr> -->
+			<%-- <td style="width: 19%" align="left" class="formLabel"><b>Contact No</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[4]}</td> --%>
+			
+			<%-- <td style="width: 19%" align="left" class="formLabel"><b>Provider Email ID</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[6]}</td> --%>
+		<!-- </tr> -->
+		<tr>
+			<td style="width: 19%" align="left" class="formLabel"><b>Patient Name</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td align="left" colspan="2">${shortFallData[7]}</td>
+		</tr>
+		<tr>
+			<td style="width: 19%" align="left" class="formLabel"><b>Al Koot ID No.</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[8]}</td>
+			
+			<td style="width: 19%" align="left" class="formLabel"><b>Policy No.</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[12]}</td>
+		</tr>
+		<tr>
+			<td style="width: 19%" align="left" class="formLabel"><b>Date of Birth</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[9]}</td>
+			
+			<td style="width: 19%" align="left" class="formLabel"><b>Gender</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[10]}</td>
+		</tr>
+		<tr>
+			<td style="width: 19%" align="left" class="formLabel"><b>Benefit Type</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[14]}</td>
+			
+			<td style="width: 19%" align="left" class="formLabel"><b>Date of Treatment</b></td> 
+			<td style="width: 1%" align="left">:</td>
+			<td style="width: 30%" align="left">${shortFallData[11]}</td>
+		</tr>
+		
+		
+		<%-- <tr>
+	    	<td class="formLabel">Shortfall No.</td>
+	    	<td class="textLabelBold"> : <bean:write name="frmShortFall" property="shortfallNo"/></td>
+	  	</tr>
+		<tr>
+	  		<td class="formLabel">Status </td>
+	    	<td class="textLabelBold"> : 
+	    	<html:select property="statusTypeID"  styleClass="selectBox selectBoxMedium" readonly="true"><!--showhideReasonAuth(this);-->
+	  				<html:options collection="ShortFallStatusID"  property="cacheId" labelProperty="cacheDesc"/>
+		    	</html:select>
+		</tr>
+		<tr>
+	      	<td nowrap class="formLabel">Reason  </td>
+	    	<td nowrap class="textLabelBold"> : <bean:write name="frmShortFall" property="reasonTypeID"/></td>
+		</tr>
+		
+		<tr>
+	      	<td nowrap class="formLabel">Remarks</td>
+	      	<td colspan="3" valign="bottom" nowrap class="formLabel"> :
+	      		 <bean:write name="frmShortFall" property="remarks"/>
+	      	</td>
+		</tr>
+		<tr>
+    	     <td class="formLabel">Correspond Date / Time</td>
+			    <td class="textLabel"> :
+			    	<bean:write name="frmShortFall" property="correspondenceDate"/>
+			    	<bean:write name="frmShortFall" property="correspondenceTime"/>
+			    	<bean:write name="frmShortFall" property="correspondenceDay"/>
+			    </td>
+		</tr>
+		<tr>
+			<td class="formLabel">Correspondence Count: </td>
+			 <td class="textLabel"> <bean:write name="frmShortFall" property="correspondenceCount"/> </td>
+		</tr>
+		
+		<tr> <td> <a href="#" onclick="onShortfallDoc('<bean:write name="frmShortFall" property="shortfallNo"/>')"> View </a> Shortfall Document </td></tr>
+		 --%>
+		 
+		 </table>
+	</fieldset>	
+<c:if test="${requestScope.activeSubLink eq 'Pre-Approval'}">
+   	<ttk:OnlineDiagnosisDetails flow="PAT" flag="MEMPATCreate"/>
+   	</c:if>
+   	
+   	<c:if test="${requestScope.activeSubLink eq 'Claims History'}">
+   	<ttk:OnlineDiagnosisDetails flow="CLM" flag="MEMPATCreate"/>
+   	</c:if>
+   	
+
+<c:if test="${requestScope.activeSubLink eq 'Claims History'}">
+   	 <table align="center" class="buttonsContainerGrid"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>
+			<b>Note :</b> <font color=red size=2> Please send us the scanned copy of any supporting documents wherever applicable.</font> 
+			</td>
+     	</tr>
+</table>
+   	</c:if>
+  
+   <!-- E N D : Form Fields -->
+		
+    	<!-- S T A R T : Buttons -->
+		<table align="center" class="buttonsContainer"  border="0" cellspacing="0" cellpadding="0">
+  			<tr>
+    			<td width="100%" align="center">
+		    		<button type="button" name="Button" accesskey="b" class="button_design_class" onMouseout="this.className='button_design_class'" onMouseover="this.className='button_design_class buttonsHover'" onClick="javascript:onBackToShortfall();"><u>B</u>ack</button>&nbsp;
+		    		<logic:notEqual value="Closed" name="${shortFallData[16]}">
+		    		<c:if test="${sessionScope.shortfallStatus eq 'Open'}">
+	    				<button type="button" name="Button" accesskey="s" class="button_design_class" onMouseout="this.className='button_design_class'" onMouseover="this.className='button_design_class buttonsHover'" onClick="javascript:onSaveShortfall();"><u>S</u>ave</button>&nbsp;
+	    			</c:if>
+	    			</logic:notEqual>
+		    		<button type="button" name="Button" accesskey="v" class="button_design_class" onMouseout="this.className='button_design_class'" onMouseover="this.className='button_design_class buttonsHover'" onClick="javascript:onShortfallDoc('${shortFallData[0]}');"><u>V</u>iew Letter</button>&nbsp;
+ 				</td>
+  			</tr>  		
+		</table>
+		<!-- E N D : Buttons -->
+	
+
+	<!-- E N D : Content/Form Area -->
+<!--E N D : Content/Form Area -->
+<INPUT TYPE="hidden" NAME="mode" VALUE="">
+</html:form>
+</div>
+		
